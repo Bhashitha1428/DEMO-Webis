@@ -31,11 +31,11 @@ export class SubcourseService {
   //   ),
 
   //   ]
-    getSubcourses(){
+    getSubcourses(catergory){
       
 
   // const course=this.http.get("http://localhost:3000/course/display");
-   const course=this.http.get("http://localhost:3000/subCatergory/display");
+   const course=this.http.get("http://localhost:3000/subCatergory/display/"+catergory);
  
    console.log(course);
    console.log("MMMMMMMMMMMMMMM")

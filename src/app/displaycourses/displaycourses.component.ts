@@ -23,14 +23,7 @@ export class DisplaycoursesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private subCourseService: SubcourseService, private coursesService: CourseService ) { }
 
   ngOnInit() {
-    this.loadedSubCourses = this.subCourseService. getSubcourses().subscribe(response => {
-      this.loadedCourses=response;
-      console.log(response);
-      //console.log(this.Course);
-     // console.log(this.Course.name);
-     // console.log(this.Course.duration);
-    // this.Course = response["Videos"];
-    });
+   
     this.loadedCourses = this.coursesService.getCourses().subscribe(response => {
       this.loadedCourses=response;
       console.log(response);
@@ -59,6 +52,14 @@ export class DisplaycoursesComponent implements OnInit {
       }
     )
     
+    this.loadedSubCourses = this.subCourseService. getSubcourses(this.course1.id).subscribe(response => {
+      this.loadedCourses=response;
+      console.log(response);
+      //console.log(this.Course);
+     // console.log(this.Course.name);
+     // console.log(this.Course.duration);
+    // this.Course = response["Videos"];
+    });
 
   }
 
